@@ -1,7 +1,7 @@
 #simple hello world py
 
 print('hello World')
-print ('End all xy')
+print ('End all xyz')
 print(4==5)
 
 
