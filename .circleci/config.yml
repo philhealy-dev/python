@@ -18,8 +18,8 @@ jobs:
                         name: run tests
                         command: |
                               . venv/bin/activate
-                              # pytest-3 -v --cov-tictactoe
-                              pytest-3 --junitxml=test-results/junit.xml
+                              # pytest -v --cov-tictactoe
+                              pytest --junitxml=test-results/junit.xml
                   - store_test_results:
                         path: test-results
 
