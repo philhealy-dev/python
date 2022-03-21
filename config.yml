@@ -1,0 +1,26 @@
+version: 2
+jobs:
+      build: 
+            docker:
+                   - image: circleci/python:3.7
+
+            working_directory: ~/python
+    
+            steps:
+                  - checkout
+                  - run:
+                         name: install dependancies
+                         command: |
+                                python3 -m venv venv
+                                . venv/bin/activate
+                  - run:
+                        name: run tests
+                        command: |
+                              . venv/bin/activate
+                              # pytest-3 -v --cov-tictactoe
+                              pytest-3 --junitxml=test-results/junit.xml
+                  - store_test_results:
+                        path: test-results
+
+                  - store_artifacts:
+                        path: test-results
